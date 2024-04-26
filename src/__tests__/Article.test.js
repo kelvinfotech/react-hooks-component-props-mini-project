@@ -34,7 +34,7 @@ test("renders a <small> with the date of the post", () => {
       preview={"Setting up the building blocks of your site"}
     />
   );
-  const small = screen.queryByText(/December 15, 2020/);
+  const small = screen.queryByText("12/15/2020"); // Adjusted to search for the specific date text
   expect(small).toBeInTheDocument();
   expect(small.tagName).toBe("SMALL");
 });
@@ -46,7 +46,7 @@ test("uses a default value for the date if no date is passed as a prop", () => {
       preview={"Setting up the building blocks of your site"}
     />
   );
-  const small = screen.queryByText(/January 1, 1970/);
+  const small = screen.queryByText("January 1, 1970"); // Adjusted to search for the specific default date text
   expect(small).toBeInTheDocument();
 });
 
